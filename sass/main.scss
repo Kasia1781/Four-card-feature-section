@@ -1,0 +1,120 @@
+@use './colors' as c;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	background-color: c.$Very-Light-Gray;
+	padding: 20px;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	width: 400px;
+	padding: 20px 30px;
+	gap: 25px;
+
+	&__text {
+		text-align: center;
+
+		h1 {
+			font-size: 2.7rem;
+			font-weight: 200;
+			color: c.$Grayish-Blue;
+		}
+
+		span {
+			font-weight: 600;
+			color: black;
+		}
+
+		p {
+			font-size: 1.7rem;
+			color: c.$Grayish-Blue;
+			margin: 10px 0;
+			text-align: center;
+		}
+	}
+}
+.card {
+	background-color: white;
+	border-top-color: red;
+	box-shadow: 0px 10px 20px 1px hsl(229, 6%, 80%);
+	border-radius: 5px;
+	padding: 20px;
+	border: 1px solid white;
+	border-top-width: 0.3rem;
+
+	&__img {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__one {
+		border-top-color: c.$Cyan;
+	}
+	&__two {
+		border-top-color: c.$Red;
+
+		margin-bottom: 25px;
+	}
+	&__three {
+		border-top-color: c.$Orange;
+	}
+	&__four {
+		border-top-color: c.$Blue;
+	}
+
+	&__text {
+		padding-right: 10px;
+		margin-bottom: 30px;
+
+		h2 {
+			font-size: 2rem;
+			margin-bottom: 5px;
+		}
+
+		p {
+			font-size: 1.5rem;
+			color: c.$Grayish-Blue;
+		}
+	}
+}
+
+@media (min-width: 1440px) {
+	.cards {
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		height: 100px;
+		max-width: 25%;
+
+		&__text {
+			position: absolute;
+			width: 600px;
+			top: 10px;
+			text-align: center;
+
+			h1 {
+				font-size: 4rem;
+			}
+		}
+	}
+}
